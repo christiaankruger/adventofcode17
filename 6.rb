@@ -12,4 +12,5 @@ loop do
     $cache[$numbers.join("-")] = count
     curr_i = $numbers.index($numbers.max)
 end
-puts count - $cache[$numbers.join("-")]
+puts "Answer A: #{count}"
+puts "Answer B: #{count - $cache[$numbers.join("-")]}"
