@@ -9,6 +9,9 @@ loop do
     [curr, $numbers.count].min.times {|j| $numbers[(curr_i + (j + 1)) % $numbers.count] += 1}
     $numbers[curr_i] = [$numbers[curr_i] - $numbers.count, 0].max
     break if $cache[($numbers.join("-"))]
+    # Part A only:
+    # $cache[$numbers.join("-")] = true
+    # Introduced with Part B:
     $cache[$numbers.join("-")] = count
     curr_i = $numbers.index($numbers.max)
 end
