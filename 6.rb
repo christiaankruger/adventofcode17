@@ -6,7 +6,7 @@ count = 0
 loop do
     count += 1
     curr = $numbers[curr_i]
-    [curr, $numbers.count].min.times {|j| $numbers[(curr_i + 1 + j) % $numbers.count] += 1}
+    [curr, $numbers.count].min.times {|j| $numbers[(curr_i + (j + 1)) % $numbers.count] += 1}
     $numbers[curr_i] = [$numbers[curr_i] - $numbers.count, 0].max
     break if $cache[($numbers.join("-"))]
     $cache[$numbers.join("-")] = count
